@@ -34,7 +34,8 @@ if (isset($_GET['category'])) {
                 <?php
                 foreach ($categories as $category) {
                     ?>
-                    <a class="catlink" data-active="<?php echo $category['category_name'] ?>" href="category.php?category=<?php echo urlencode($category['category_name']) ?>">
+                    <a class="catlink" data-active="<?php echo $category['category_name'] ?>"
+                        href="category.php?category=<?php echo urlencode($category['category_name']) ?>">
                         <?php echo ucfirst($category['category_name']) ?>
                     </a>
                     <?php

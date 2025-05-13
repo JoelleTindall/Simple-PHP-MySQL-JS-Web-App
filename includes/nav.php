@@ -1,5 +1,7 @@
+<?php ?>
+<!-- mobile navbar -->
 <nav class="mobile">
-    <div class="brand">Cats R Us</div>
+    <div class="brand"><a href="index.php">Cats R Us</a></div>
     <span class="menuBtn">
         <img src="images/hamburger.png" alt="Toggle Button">
     </span>
@@ -10,14 +12,17 @@
     </ul>
 </nav>
 
+<!-- full navbar -->
 <nav class="full">
-    <div class="brand">Cats R Us</div>
+    <div class="brand"><a href="index.php">Cats R Us</a></div>
     <div class="links">
         <a data-active="index" href="index.php">Home</a>
         <a data-active="about" href="about.php">About</a>
         <a data-active="contact" href="contact.php">Contact</a>
     </div>
 </nav>
+
+<!-- importing jQuery here since it isn't used anywhere alse currently -->
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 
 <script>

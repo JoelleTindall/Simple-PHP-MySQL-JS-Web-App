@@ -6,7 +6,7 @@ let navlinks = document.querySelectorAll("*.links a");
 let bodyId = document.querySelector("body").id;
 //loops navlinks as link
 for (let link of navlinks) {
-//if active link matches the body id...
+  //if active link matches the body id...
   if (link.dataset.active == bodyId) {
     //...add the active class
     link.classList.add("active");
@@ -14,10 +14,10 @@ for (let link of navlinks) {
 }
 
 //keeps category link highlighted when selected
-let catlinks=document.querySelectorAll("a.catlink");
+let catlinks = document.querySelectorAll("a.catlink");
 
 for (let link of catlinks) {
-//if active link matches the body id...
+  //if active link matches the body id...
   if (link.dataset.active == bodyId) {
     //...add the active class
     link.classList.add("active");
@@ -25,14 +25,10 @@ for (let link of catlinks) {
 }
 
 //gets page title to be displayed in UI
-// Get page title 
 const pageTitle = document.title;
- 
+
 // UI element to display title
-const titleDisplay = document.getElementById('pagetitle');
- 
+const titleDisplay = document.getElementById("pagetitle");
+
 // Set inner text to title
 titleDisplay.innerText = pageTitle;
-
-
-

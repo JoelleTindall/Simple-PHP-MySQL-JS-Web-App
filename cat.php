@@ -1,10 +1,9 @@
-<?php require "php/functions.php" ?>
-
 <?php
+require "php/functions.php";
 if (isset($_GET['name'])) {
     $name = urldecode($_GET['name']);
-    $selectedcat = getCatByName($name);
 }
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -34,26 +33,30 @@ if (isset($_GET['name'])) {
             </div>
 
             <div class="column middle">
+                <?php $selectedcat = getCatByName($name);
+                if ($selectedcat) { ?>
 
-                <div class="selected-cat">
 
-                    <img src="<?php echo "images/cats/{$selectedcat[0]['image']}" ?>">
+                    <div class="selected-cat">
 
-                    <div class="name"><?php echo $name ?></div>
-                    <div class="selected-left">
-                        <h3>About</h3>
-                        <p class="description">
-                            <?php echo $selectedcat[0]['description'] ?>
-                        </p>
+                        <img src="<?php echo "images/cats/{$selectedcat[0]['image']}" ?>">
+
+                        <div class="name"><?php echo $selectedcat[0]['name'] ?></div>
+                        <div class="selected-left">
+                            <h3>About</h3>
+                            <p class="description">
+                                <?php echo $selectedcat[0]['description'] ?>
+                            </p>
+                        </div>
+                        <div class="selected-right">
+                            <p class="price">
+                                $<?php echo $selectedcat[0]['price'] ?>
+                            </p>
+                        </div>
+                        <div class="selected-button"><button>Buy This Cat!</button></div>
+
                     </div>
-                    <div class="selected-right">
-                        <p class="price">
-                            $<?php echo $selectedcat[0]['price'] ?>
-                        </p>
-                    </div>
-                    <div class="selected-button"><button>Buy This Cat!</button></div>
-
-                </div>
+                <?php } ?>
             </div>
             <div class="column right"></div>
         </div>
