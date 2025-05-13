@@ -1,6 +1,6 @@
 <?php
 
-//logs detailed error to console
+//logs detailed error to console 
 function console_log($output, $with_script_tags = true)
 {
     $js_code = 'console.log(' . json_encode($output, JSON_HEX_TAG) .
@@ -14,7 +14,9 @@ function console_log($output, $with_script_tags = true)
 //formats error message (can add other stuff to this)
 function dbErrorHandler(int $errNo, string $errMsg, string $file, int $line)
 {
-    console_log("Error!\n Error #[$errNo] occurred in [$file] at line [$line]: [$errMsg]");
+   
+   // (USE error_log IF IN PRODUCTION!)
+    console_log("Error!\nError #[$errNo] occurred in [$file] at line [$line]: [$errMsg]");
 }
 
 //user-friendly error message

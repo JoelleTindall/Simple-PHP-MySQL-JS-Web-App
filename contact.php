@@ -23,8 +23,8 @@
             <div class="column left">
                 <h1>Lets Talk</h1>
                 <div style="text-align:center; padding-top:10px;">
-           <p>There's a few ways to get ahold of us.</p>
-           </div>
+                    <p>There's a few ways to get ahold of us.</p>
+                </div>
             </div>
             <div class="column middle">
                 <h2 style="padding-bottom:30px;">Want to get ahold of us?</h2>

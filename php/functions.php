@@ -7,17 +7,19 @@ set_error_handler('dbErrorHandler');
 
 function dbConnect()
 {
+    mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
     try {
+        
         //creates connection to db
         $mysqli = new mysqli(SERVER, USERNAME, PASSWORD, DATABASE);
-        if ($mysqli->connect_error != 0) {
-            //returns false if no luck connecting
-            return FALSE;
-        } else {
-            //returns connection if connection is good to go
-            return $mysqli;
-        }
-    } catch (Throwable $e) {
+
+        //returns connection if connection is good to go
+        return $mysqli;
+        
+        
+    } catch (mysqli_sql_exception $e) {
+        //catches and logs to console (USE error_log IF IN PRODUCTION!)
+        console_log(''. $e->getMessage());
         //returns false if something unexpected happens..
         return FALSE;
     }
